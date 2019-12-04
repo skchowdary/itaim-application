@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
 @EnableTransactionManagement
 @EnableElasticsearchRepositories("com.itaim.application.repository.search")
-public class DatabaseConfiguration {
-
-    private final Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
+public class DatabaseConfiguration 
+{
+	private final Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
 }

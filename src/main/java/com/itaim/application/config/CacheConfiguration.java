@@ -12,17 +12,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import io.github.jhipster.config.JHipsterProperties;
 import java.util.concurrent.TimeUnit;
-import org.hibernate.cfg.AvailableSettings;
 import org.infinispan.eviction.EvictionType;
 import org.infinispan.manager.EmbeddedCacheManager;
 import org.infinispan.spring.starter.embedded.InfinispanCacheConfigurer;
 import org.infinispan.spring.starter.embedded.InfinispanGlobalConfigurer;
 import org.infinispan.transaction.TransactionMode;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
-import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.infinispan.remoting.transport.jgroups.JGroupsTransport;
-import org.jgroups.Channel;
 import org.jgroups.JChannel;
 import org.jgroups.PhysicalAddress;
 import org.jgroups.protocols.*;
@@ -207,7 +203,8 @@ public class CacheConfiguration {
      * MPING multicast is replaced with TCPPING with the host details discovered
      * from registry and sends only unicast messages to the host list.
      */
-    private JChannel getTransportChannel() {
+    @SuppressWarnings("deprecation")
+	private JChannel getTransportChannel() {
         JChannel channel = null;
         List<PhysicalAddress> initialHosts = new ArrayList<>();
         try {
