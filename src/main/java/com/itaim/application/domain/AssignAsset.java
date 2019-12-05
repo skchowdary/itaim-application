@@ -11,9 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="assign_asset")
-public class AssignAsset implements Serializable{
-	
+@Table(name="AssignAsset")
+public class AssignAsset implements Serializable
+{
 	private static final long serialVersionUID = 1L;
 
 	public static long getSerialversionuid() 

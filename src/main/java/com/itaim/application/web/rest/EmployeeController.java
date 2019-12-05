@@ -19,7 +19,7 @@ public class EmployeeController
 	@Autowired
 	EmployeeServiceImpl employeeService;
 	
-	@RequestMapping(value = "/save", method=RequestMethod.GET)
+	@RequestMapping(value = "/save", method=RequestMethod.POST)
 	public String saveEmployee(@RequestBody Employee employee) 
 	{ 
 		employeeService.saveEmployee(employee);

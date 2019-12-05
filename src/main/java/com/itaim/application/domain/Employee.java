@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Employee")
+@Table(name = "Employees")
 public class Employee implements Serializable 
 {
 	private static final long serialVersionUID = 1L;
@@ -36,9 +36,6 @@ public class Employee implements Serializable
 	@Column(name = "address" , nullable = false)
 	private String address;
 	
-	@Column(name = "clientName" , nullable = false)
-	private String client;
-	
 	public Employee()
 	{
 		super();
@@ -51,7 +48,6 @@ public class Employee implements Serializable
 		this.email = email;
 		this.phone = phone;
 		this.address = address;
-		this.client = client;
 	}
 
 	public int getId()
@@ -104,21 +100,12 @@ public class Employee implements Serializable
 		this.address = address;
 	}
 
-	public String getClient()
-	{
-		return client;
-	}
-
-	public void setClient(String client) 
-	{
-		this.client = client;
-	}
 
 	@Override
 	public String toString() 
 	{
 		return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", address="
-				+ address + ", client=" + client + "]";
+				+ address + "]";
 	}	    
 
 }
